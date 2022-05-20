@@ -1,0 +1,19 @@
+{
+    "name": "jeroen-g/ontology-publish",
+    "description": "Present your documentation generated with Ontology",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeroen",
+            "email": "jeroengjeroeng@gmail.com",
+            "homepage": "https://jeroeng.dev"
+        }
+    ],
+    "homepage": "https://github.com/jeroeng/ontology-publish",
+    "keywords": ["PHP", "DDD", "Documentation","Ontology", "publish", "plugin"],
+    "autoload": {
+        "psr-4": {
+            "JeroenG\\OntologyPublish\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "name": "ontology-publish",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "yarn lint:js && yarn lint:sass",
+        "lint:js": "eslint -c dev/.eslintrc.json src",
+        "lint:sass": "sass-lint --max-warnings 0 -c dev/.sasslint.yml -v -q src/styles",
+        "fix:js": "eslint --fix -c dev/.eslintrc.json src",
+        "fix:sass": "sass-lint-auto-fix -c dev/.sasslint.yml"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.sass": [
+            "sass-lint-auto-fix -c dev/.sasslint.yml",
+            "yarn lint:sass"
+        ],
+        "*.{js,ts}": [
+            "node_modules/.bin/eslint -c dev/.eslintrc.json --fix",
+            "yarn lint:js"
+        ]
+    },
+    "dependencies": {
+        "@headlessui/react": "^0.3.1",
+        "@tailwindcss/typography": "^0.4.0",
+        "autoprefixer": "^10.2.4",
+        "gray-matter": "^4.0.2",
+        "next": "12",
+        "postcss": "^8.2.6",
+        "postcss-flexbugs-fixes": "^5.0.2",
+        "postcss-preset-env": "^6.7.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "remark": "^13.0.0",
+        "remark-html": "^13.0.1",
+        "remark-trim-md-extension": "^1.0.0",
+        "sass": "^1.32.8",
+        "tailwindcss": "^2.0.3",
+        "unist-util-visit": "^2.0.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.17",
+        "@babel/preset-env": "^7.12.17",
+        "@babel/preset-react": "^7.12.13",
+        "@types/node": "^14.14.31",
+        "@types/react": "^17.0.2",
+        "eslint": "^7.20.0",
+        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "husky": "^5.0.9",
+        "lint-staged": "^10.5.4",
+        "sass-lint-auto-fix": "^0.21.2",
+        "typescript": "^4.1.5"
+    }
+}
